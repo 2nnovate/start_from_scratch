@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server/index.js",
+    "start": "babel-node src/server/index.js",
     "build": "webpack --mode production",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "server": "nodemon src/server/index.js",
+    "server": "nodemon --exec babel-node src/server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
